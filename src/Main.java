@@ -21,7 +21,7 @@ public class Main {
         employees[0] = new Employee("Зайцев", "Николай", "Николаевич", 1+dep[0], 80000.0+salaryInt[0]);
         employees[1] = new Employee("Корниенко", "Дмитрий", "Сергеевич", 1+dep[1], 80000.0+salaryInt[1]);
         employees[2] = new Employee("Калистов", "Геннадий", "Антонович", 1+dep[2], 80000.0+salaryInt[2]);
-        employees[3] = new Employee("Колганова", "Алёна", "Евгеньевна", 1+dep[3], 80000.0+salaryInt[3]);
+//        employees[3] = new Employee("Колганова", "Алёна", "Евгеньевна", 1+dep[3], 80000.0+salaryInt[3]);
         employees[4] = new Employee("Минин", "Константин", "Николаевич", 1+dep[4], 80000.0+salaryInt[4]);
         employees[5] = new Employee("Карпов", "Юрий", "Александрович", 1+dep[5], 80000.0+salaryInt[5]);
         employees[6] = new Employee("Адамович", "Евгений", "Юрьевич", 1+dep[6], 80000.0+salaryInt[6]);
@@ -30,9 +30,10 @@ public class Main {
         employees[9] = new Employee("Гапонов", "Эдуард", "Евгеньевич", 1+dep[9], 80000.0+salaryInt[9]);
 
         // Выводим список сотрудников со всеми полями
-        for (int j = 0; j < employees.length; j++)
-        System.out.println("id: "+ employees[j].getId()+ "\t" +employees[j]+"\tоклад: "+employees[j].getSalary());
-
+        for (int j = 0; j < employees.length; j++) {
+            if (employees[j] != null)
+            System.out.println("id: " + employees[j].getId() + "\t" + employees[j] + "\tоклад: " + employees[j].getSalary());
+        }
         // Ищем минимальную зарплату (двумя методами)
         double printSalary = EmployeeService.minSalary(employees);
         System.out.println("\nМинимальная зарплата: "+ printSalary);

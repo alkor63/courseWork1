@@ -30,8 +30,11 @@ public class EmployeeService {
     // ищем в массиве максимальное значение
     public static double maxSalary(Employee[] employees) {
         double max = employees[0].getSalary();
-        for (int j = 1; j < employees.length; j++)
-            if (employees[j].getSalary() > max) max = employees[j].getSalary();
+        for (int j = 1; j < employees.length; j++) {
+            if (employees[j] != null){
+                if (employees[j].getSalary() > max)
+                    max = employees[j].getSalary();}
+        }
         return max;
     }
     // ищем в массиве максимальное значение, возвращаем его индекс
@@ -48,9 +51,6 @@ public class EmployeeService {
         }
         return maxSalIndex;
     }
-
-
-
 // ищем сумму зарплат в массиве
 // и думаем как передать "наверх" количество слагаемых
 // для вычисления среднего значения
@@ -59,13 +59,14 @@ public class EmployeeService {
         return numPersons;
     }
 
-
     public static double sumSalary(Employee[] employees) {
         double sum = 0.0;
         numPersons = 0;
         for (int j = 0; j < employees.length; j++) {
-            sum = sum + employees[j].getSalary();
-            numPersons++;
+            if (employees[j] != null) {
+                sum = sum + employees[j].getSalary();
+                numPersons++;
+            }
         }
         return sum;
     }
