@@ -1,16 +1,4 @@
-public class EmployeeService {
-    public static double minSalary(Employee[] employees) {
-// ищем в массиве минимальное значение
-        double minSal = employees[0].getSalary();
-        for (int j = 1; j < employees.length; j++) {
-            if (employees[j] != null){
-                if (employees[j].getSalary() < minSal) {
-                    minSal = employees[j].getSalary();
-                }
-            }
-        }
-        return minSal;
-    }
+public class DepartmentService {
 
     // ищем в массиве минимальное значение, возвращаем его индекс
     public static int minSalaryIndex(Employee[] employees) {
@@ -27,16 +15,6 @@ public class EmployeeService {
         return minSalIndex;
     }
 
-    // ищем в массиве максимальное значение
-    public static double maxSalary(Employee[] employees) {
-        double max = employees[0].getSalary();
-        for (int j = 1; j < employees.length; j++) {
-            if (employees[j] != null){
-                if (employees[j].getSalary() > max)
-                    max = employees[j].getSalary();}
-        }
-        return max;
-    }
     // ищем в массиве максимальное значение, возвращаем его индекс
     public static int maxSalaryIndex(Employee[] employees) {
         double maxSal = employees[0].getSalary();
@@ -51,16 +29,14 @@ public class EmployeeService {
         }
         return maxSalIndex;
     }
-// ищем сумму зарплат в массиве
+    // ищем сумму зарплат в массиве
 // и думаем как передать "наверх" количество слагаемых
 // для вычисления среднего значения
     static int numPersons;
     public static int getNumPersons() {
         return numPersons;
     }
-    public static double calcAvgSalary(Employee[] employees) {
-        return sumSalary(employees) / getNumPersons();
-    }
+
     public static double sumSalary(Employee[] employees) {
         double sum = 0.0;
         numPersons = 0;
@@ -72,5 +48,6 @@ public class EmployeeService {
         }
         return sum;
     }
+
 
 }
