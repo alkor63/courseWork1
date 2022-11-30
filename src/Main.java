@@ -51,8 +51,8 @@ public class Main {
 
 // Суммарная и средняя зарплата
         System.out.println("\nСуммарная зарплата: " + EmployeeService.sumSalary(employees));
-        System.out.println("Количество работников = " + EmployeeService.getNumPersons());
-        System.out.println("Средняя зарплата: " + EmployeeService.calcAvgSalary(employees));
+        System.out.println("Количество работников = " + EmployeeService.numPersons(employees));
+        System.out.println("Средняя зарплата: " + EmployeeService.sumSalary(employees)/EmployeeService.numPersons(employees));
 
 // Выводим полный список сотрудников (только ФИО)
         System.out.println("\nПолный список сотрудников (только ФИО):");
@@ -60,10 +60,5 @@ public class Main {
             if (employees[j] != null)
                 System.out.println(employees[j]);
         }
-// Для решения задач "повышенной сложности"
-// создадим новый кдласс DepartmentService
-
-
     }
-
 }
